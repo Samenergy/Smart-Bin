@@ -138,9 +138,9 @@ const HouseholdUserSignup = () => {
         >
           Sign Up
         </button>
-        <p>
+        {/* <p>
           Sign up as a Company? <a href="/SignupCompany" className="text-blue-500">Signup</a>
-        </p>
+        </p> */}
       </form>
     </div>
   );
