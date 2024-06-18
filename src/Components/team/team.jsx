@@ -1,8 +1,10 @@
+import React from "react";
+
 const people = [
   {
     name: "Samuel Dushime",
     role: "Back-end Developer",
-    imageUrl: "./src/assets/IMG_2768.JPG",
+    imageUrl: "",
   },
   {
     name: "Serge Kamanzi",
@@ -21,44 +23,43 @@ const people = [
   },
   {
     name: "Diane Ingabire",
-    role: "Quality assurance",
+    role: "Quality Assurance",
     imageUrl: "",
   },
 ];
 
-export default function Team() {
+const Team = () => {
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-20 grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Meet our Team
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Together, our diverse and skilled team is dedicated to delivering a
-            high-quality and user-friendly smart waste management
-            solution.
-          </p>
-        </div>
-        <ul
-          role="list"
-          className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2"
-        >
+    <div className="bg-white py-12 sm:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
+          Meet our Team
+        </h2>
+        <p className="mt-6 text-lg leading-8 text-gray-600 text-center">
+          Together, our diverse and skilled team is dedicated to delivering a
+          high-quality and user-friendly smart waste management solution.
+        </p>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {people.map((person) => (
-            <li key={person.name}>
-              <div className="flex items-center gap-x-6">
-                <img
-                  className="h-16 w-16 rounded-full"
-                  src={person.imageUrl}
-                  alt=""
-                />
-                <div>
-                  <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
-                    {person.name}
-                  </h3>
-                  <p className="text-sm font-semibold leading-6 text-[#37af65]">
-                    {person.role}
-                  </p>
+            <li
+              key={person.name}
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+            >
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <img
+                    className="h-16 w-16 rounded-full"
+                    src={person.imageUrl}
+                    alt={person.name}
+                  />
+                  <div className="ml-3">
+                    <h3 className="text-lg font-semibold leading-6 text-gray-900">
+                      {person.name}
+                    </h3>
+                    <p className="text-sm leading-5 text-[#37af65]">
+                      {person.role}
+                    </p>
+                  </div>
                 </div>
               </div>
             </li>
@@ -67,4 +68,6 @@ export default function Team() {
       </div>
     </div>
   );
-}
+};
+
+export default Team;

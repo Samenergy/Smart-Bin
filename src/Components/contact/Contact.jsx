@@ -1,20 +1,21 @@
 import React from "react";
 
-
 const Contact = () => {
   return (
-    <div className="-mb-40 ">
-      <div className="grid sm:grid-cols-2 items-center gap-16 p-8 mx-20 max-w-4xl bg-white  text-[#333] ">
+    <div className="-mb-40">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 items-center gap-16 p-8 mx-4 md:mx-20 max-w-4xl bg-white text-[#333]">
         <div>
-          <h1 className="text-5xl font-extrabold">Let's Talk</h1>
-          <p className="text-xl text-gray-400 mt-3">Send us a message</p>
-          <div className="mt-12">
-            <h2 className="text-lg font-extrabold">Email</h2>
+          <h1 className="text-3xl sm:text-5xl font-extrabold">Let's Talk</h1>
+          <p className="text-lg sm:text-xl text-gray-400 mt-3">
+            Send us a message
+          </p>
+          <div className="mt-8 sm:mt-12">
+            <h2 className="text-lg sm:text-xl font-extrabold">Email</h2>
             <ul className="mt-3">
               <li className="flex items-center">
-                <div className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                <div className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center">
                   <svg
-                    xmlns=""
+                    xmlns="http://www.w3.org/2000/svg"
                     width="20px"
                     height="20px"
                     fill="#37af65"
@@ -27,23 +28,21 @@ const Contact = () => {
                   </svg>
                 </div>
                 <a
-                  target="blank"
-                  href=""
-                  className="text-[#37af65] text-sm ml-3"
+                  href="mailto:smartbin@gmail.com"
+                  className="text-[#37af65] text-sm ml-3 hover:underline"
                 >
-                  <small className="block">Mail</small>
                   <strong>smartbin@gmail.com</strong>
                 </a>
               </li>
             </ul>
           </div>
-          <div className="mt-12">
-            <h2 className="text-lg font-extrabold">Socials</h2>
+          <div className="mt-8 sm:mt-12">
+            <h2 className="text-lg sm:text-xl font-extrabold">Socials</h2>
             <ul className="flex mt-3 space-x-4">
-              <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <a href="">
+              <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center">
+                <a href="#" className="hover:text-[#37af65]">
                   <svg
-                    xmlns=""
+                    xmlns="http://www.w3.org/2000/svg"
                     width="20px"
                     height="20px"
                     fill="#37af65"
@@ -56,26 +55,26 @@ const Contact = () => {
                   </svg>
                 </a>
               </li>
-              <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <a href="">
+              <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center">
+                <a href="#" className="hover:text-[#37af65]">
                   <svg
-                    xmlns=""
+                    xmlns="http://www.w3.org/2000/svg"
                     width="20px"
                     height="20px"
                     fill="#37af65"
                     viewBox="0 0 511 512"
                   >
                     <path
-                      d="M111.898 160.664H15.5c-8.285 0-15 6.719-15 15V497c0 8.285 6.715 15 15 15h96.398c8.286 0 15-6.715 15-15V175.664c0-8.281-6.714-15-15-15zM96.898 482H30.5V190.664h66.398zM63.703 0C28.852 0 .5 28.352.5 63.195c0 34.852 28.352 63.2 63.203 63.2 34.848 0 63.195-28.352 63.195-63.2C126.898 28.352 98.551 0 63.703 0zm0 96.395c-18.308 0-33.203-14.891-33.203-33.2C30.5 44.891 45.395 30 63.703 30c18.305 0 33.195 14.89 33.195 33.195 0 18.309-14.89 33.2-33.195 33.2zm289.207 62.148c-22.8 0-45.273 5.496-65.398 15.777-.684-7.652-7.11-13.656-14.942-13.656h-96.406c-8.281 0-15 6.719-15 15V497c0 8.285 6.719 15 15 15h96.406c8.285 0 15-6.715 15-15V320.266c0-22.735 18.5-41.23 41.235-41.23 22.734 0 41.226 18.495 41.226 41.23V497c0 8.285 6.719 15 15 15h96.403c8.285 0 15-6.715 15-15V302.066c0-79.14-64.383-143.523-143.524-143.523zM466.434 482h-66.399V320.266c0-39.278-31.953-71.23-71.226-71.23-39.282 0-71.239 31.952-71.239 71.23V482h-66.402V190.664h66.402v11.082c0 5.77 3.309 11.027 8.512 13.524a15.01 15.01 0 0 0 15.875-1.82c20.313-16.294 44.852-24.907 70.953-24.907 62.598 0 113.524 50.926 113.524 113.523zm0 0"
+                      d="M111.898 160.664H15.5c-8.285 0-15 6.719-15 15V497c0 8.285 6.715 15 15 15h96.398c8.286 0 15-6.715 15-15V175.664c0-8.281-6.714-15-15-15zM96.898 482H30.5V190.664h66.398zM63.703 0C28.852 0 .5 28.352.5 63.195c0 34.852 28.352 63.2 63.203 63.2 34.848 0 63.195-28.352 63.195-63.2C126.898 28.352 98.551 0 63.703 0zm0 96.395c-18.308 0-33.203-14.891-33.203-33.2C30.5 44.891 45.395 30 63.703 30c18.305 0 33.195 14.89 33.195 33.195 0 18.309-14.89 33.2-33.195 33.2zm289.207 62.148c-22.8 0-45.273 5.496-65.398 15.777-.684-7.652-7.11-13.656-14.942-13.656h-96.406c-8.281 0-15 6.719-15 15V497c0 8.285 6.719 15 15 15h96.406c8.285 0 15-6.715 15-15V320.266c0-22.735 18.5-41.23 41.235-41.23 22.734 0 41.226 18.495 41.226 41.23V497c0 8.285 6.719 15 15 15h96.403c8.285 0 15-6.715 15-15V302.066c0-79.14-64.383-143.523-143.524-143.523zM466.434 482h-66.399V320.266c0-39.278-31.953-71.23-71.226-71.23-39.282 0-71.239 31.952-71.239 71.23V482h-66.402V190.664h66.402v11.082c0 5.77 3.309 11.027 8.512 13.524a15.01 15.01 0 0 0 15.875-1.82c20.313-16.294 44.852-24.907 70.953-24.907 62.598 0 113.524 50.926 113.524 113.524zm0 0"
                       data-original="#000000"
                     />
                   </svg>
                 </a>
               </li>
-              <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <a href="javascript:void(0)">
+              <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center">
+                <a href="#" className="hover:text-[#37af65]">
                   <svg
-                    xmlns=""
+                    xmlns="http://www.w3.org/2000/svg"
                     width="20px"
                     height="20px"
                     fill="#37af65"
@@ -89,7 +88,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <form className=" space-y-4">
+        <form className="space-y-4">
           <input
             type="text"
             placeholder="Name"

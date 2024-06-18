@@ -22,7 +22,7 @@ const Hero = () => {
             </p>
             <div className="button-container mt-6 flex items-center justify-center sm:justify-start gap-4">
               <a
-                href="#"
+                href="/signup"
                 className="cta-button rounded-md bg-[#37af65] px-4 py-3 text-base sm:text-lg md:text-xl lg:text-xl xl:text-xl font-semibold text-white shadow-sm hover:bg-[#468d5f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#37af65]"
               >
                 Get Started
