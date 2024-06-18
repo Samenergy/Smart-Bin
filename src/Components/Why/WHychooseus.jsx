@@ -1,5 +1,6 @@
 import React from "react";
 import projectImage from "../../assets/chooseus-1.png";
+
 const features = [
   {
     name: "Reliable Service",
@@ -20,24 +21,22 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-[#fff] py-12 flex gap-5 mx-20">
-      <div>
-        <img src={projectImage} alt="" />
+    <section className="bg-[#fff] py-12 px-4 sm:px-6 lg:px-20 flex flex-col lg:flex-row items-center lg:gap-10">
+      <div className="flex-shrink-0 mb-10 lg:mb-0 lg:w-1/2">
+        <img src={projectImage} alt="Why Choose Us" className="w-full h-auto" />
       </div>
-      <div className=" mx-auto  px-4">
-        <h1 className="text-[#37af65] text-left text-2xl font-bold ">
-          Why choose us{" "}
-        </h1>
-        <h1 className="sm:text-3xl lg:text-5xl font-bold title-font text-blue mb-20">
+      <div className="flex-grow text-center lg:text-left lg:w-1/2">
+        <h1 className="text-[#37af65] text-2xl font-bold">Why choose us</h1>
+        <h1 className="sm:text-3xl lg:text-5xl font-bold title-font text-blue mb-10 lg:mb-20">
           Why choose Smart <span className="font-normal">Bin</span>{" "}
           <span className="text-[#37af65] text-5xl -ml-2">.</span>
         </h1>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20  lg:max-w-4xl">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none  lg:">
+        <div className="max-w-2xl mx-auto lg:mx-0 mt-10 lg:mt-20">
+          <dl className="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-1 lg:gap-x-8 lg:gap-y-10">
             {features.map((feature) => (
-              <div key={feature.name} className="relative pl-16">
+              <div key={feature.name} className="relative pl-10 lg:pl-16">
                 <dt className="text-2xl font-bold leading-7 text-gray-900">
-                  <div className="absolute left-0 top-2 flex h-5 w-5 items-center  justify-center rounded-lg bg-[#37af65]"></div>
+                  <div className="absolute left-0 top-2 flex h-5 w-5 items-center justify-center rounded-lg bg-[#37af65]"></div>
                   {feature.name}
                 </dt>
                 <dd className="mt-2 text-lg leading-7 text-gray-600">

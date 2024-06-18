@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const HouseholdUserSignup = () => {
   const [formData, setFormData] = useState({
@@ -8,11 +8,11 @@ const HouseholdUserSignup = () => {
     email: "",
     password: "",
     street: "",
-    phonenumber: "", // Changed to match the state variable
+    phonenumber: "",
     district: "",
   });
 
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -39,15 +39,12 @@ const HouseholdUserSignup = () => {
   };
 
   return (
-    <div className="min-w-min w-1/2  bg-[#fff] p-8 rounded-r-3xl shadow-2xl">
-      <h2 className="text-5xl font-bold mb-6">Create account</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="flex gap-5">
-          <div className="mb-4">
-            <label
-              htmlFor="username"
-              className="block text-sm font-medium text-gray-700"
-            >
+    <div className="w-full lg:w-1/2 bg-[#fff] p-6 lg:p-8 rounded-t-3xl lg:rounded-r-3xl lg:rounded-l-none shadow-2xl flex flex-col items-center">
+      <h2 className="text-3xl lg:text-5xl font-bold mb-6">Create account</h2>
+      <form onSubmit={handleSubmit} className="w-full">
+        <div className="flex flex-col lg:flex-row gap-5 mb-4">
+          <div className="w-full">
+            <label htmlFor="username" className="block text-sm font-medium text-gray-700">
               Username
             </label>
             <input
@@ -57,14 +54,11 @@ const HouseholdUserSignup = () => {
               value={formData.username}
               onChange={handleChange}
               required
-              className="mt-1  w-full rounded-md bg-[#eee] shadow-sm  pl-2 py-2"
+              className="mt-1 w-full rounded-md bg-[#eee] shadow-sm pl-2 py-2"
             />
           </div>
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
+          <div className="w-full">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email
             </label>
             <input
@@ -74,16 +68,13 @@ const HouseholdUserSignup = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="mt-1  w-full rounded-md bg-[#eee] shadow-sm  pl-2 py-2"
+              className="mt-1 w-full rounded-md bg-[#eee] shadow-sm pl-2 py-2"
             />
           </div>
         </div>
-        <div className="flex gap-5">
-          <div className="mb-4">
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
-            >
+        <div className="flex flex-col lg:flex-row gap-5 mb-4">
+          <div className="w-full">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
               Password
             </label>
             <input
@@ -93,14 +84,11 @@ const HouseholdUserSignup = () => {
               value={formData.password}
               onChange={handleChange}
               required
-              className="mt-1  w-full rounded-md bg-[#eee] shadow-sm  pl-2 py-2"
+              className="mt-1 w-full rounded-md bg-[#eee] shadow-sm pl-2 py-2"
             />
           </div>
-          <div className="mb-4">
-            <label
-              htmlFor="street"
-              className="block text-sm font-medium text-gray-700"
-            >
+          <div className="w-full">
+            <label htmlFor="street" className="block text-sm font-medium text-gray-700">
               House number
             </label>
             <input
@@ -110,16 +98,13 @@ const HouseholdUserSignup = () => {
               value={formData.street}
               onChange={handleChange}
               required
-              className="mt-1  w-full rounded-md bg-[#eee] shadow-sm  pl-2 py-2"
+              className="mt-1 w-full rounded-md bg-[#eee] shadow-sm pl-2 py-2"
             />
           </div>
         </div>
-        <div className="flex gap-5">
-          <div className="mb-4">
-            <label
-              htmlFor="phonenumber"
-              className="block text-sm font-medium text-gray-700"
-            >
+        <div className="flex flex-col lg:flex-row gap-5 mb-4">
+          <div className="w-full">
+            <label htmlFor="phonenumber" className="block text-sm font-medium text-gray-700">
               Phone Number
             </label>
             <input
@@ -129,15 +114,11 @@ const HouseholdUserSignup = () => {
               value={formData.phonenumber}
               onChange={handleChange}
               required
-              className="mt-1  w-full rounded-md bg-[#eee] shadow-sm  pl-2 py-2"
+              className="mt-1 w-full rounded-md bg-[#eee] shadow-sm pl-2 py-2"
             />
           </div>
-
-          <div className="mb-4">
-            <label
-              htmlFor="district"
-              className="block text-sm font-medium text-gray-700"
-            >
+          <div className="w-full">
+            <label htmlFor="district" className="block text-sm font-medium text-gray-700">
               District
             </label>
             <input
@@ -147,18 +128,18 @@ const HouseholdUserSignup = () => {
               value={formData.district}
               onChange={handleChange}
               required
-              className="mt-1  w-full rounded-md bg-[#eee] shadow-sm  pl-2 py-2"
+              className="mt-1 w-full rounded-md bg-[#eee] shadow-sm pl-2 py-2"
             />
           </div>
         </div>
         <button
           type="submit"
-          className="w-3/4 bg-[#37af65] text-white py-2 rounded-lg hover:bg-[#3b684c] mb-5"
+          className="w-full lg:w-3/4 bg-[#37af65] text-white py-2 rounded-lg hover:bg-[#3b684c] mb-5"
         >
           Sign Up
         </button>
         <p>
-          Sign up as a Company? <a href="/SignupCompany">Signup</a>
+          Sign up as a Company? <a href="/SignupCompany" className="text-blue-500">Signup</a>
         </p>
       </form>
     </div>

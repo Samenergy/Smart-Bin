@@ -1,7 +1,109 @@
-#b-image{
+#b-image {
     background-image: url(../../assets/TNYLT89.jpg);
     background-repeat: no-repeat;
-    background-size: cover; 
-    
-    
-}
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .hero-container {
+    width: 100%;
+  }
+  
+  .content-wrapper {
+    width: 100%;
+  }
+  
+  .content {
+    width: 100%;
+  }
+  
+  .text-content {
+    width: 100%;
+  }
+  
+  .welcome-text,
+  .main-heading,
+  .description {
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #37af65;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #468d5f;
+  }
+  
+  @media (min-width: 640px) {
+    .welcome-text {
+      font-size: 1.25rem;
+    }
+  
+    .main-heading {
+      font-size: 2.25rem;
+    }
+  
+    .description {
+      font-size: 1.125rem;
+    }
+  
+    .cta-button {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .welcome-text {
+      font-size: 1.5rem;
+    }
+  
+    .main-heading {
+      font-size: 3rem;
+    }
+  
+    .description {
+      font-size: 1.25rem;
+    }
+  
+    .cta-button {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .welcome-text {
+      font-size: 1.5rem;
+    }
+  
+    .main-heading {
+      font-size: 3rem;
+    }
+  
+    .description {
+      font-size: 1.25rem;
+    }
+  
+    .cta-button {
+      font-size: 1.5rem;
+    }
+  }
+  
