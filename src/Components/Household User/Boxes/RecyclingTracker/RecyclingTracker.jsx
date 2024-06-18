@@ -1,22 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const RecyclingDashboard = () => {
   const [recyclingLog, setRecyclingLog] = useState([]);
-  const [materialType, setMaterialType] = useState('');
-  const [amount, setAmount] = useState('');
+  const [materialType, setMaterialType] = useState("");
+  const [amount, setAmount] = useState("");
 
   // Function to fetch recycling log data from the server
   const fetchRecyclingLog = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/household/recycling-log', {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-      });
+      const response = await axios.get(
+        "https://smart-bin-backend-production.up.railway.app/api/household/recycling-log",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       setRecyclingLog(response.data);
     } catch (error) {
-      console.error('Error fetching recycling log:', error);
+      console.error("Error fetching recycling log:", error);
     }
   };
 
@@ -25,24 +28,24 @@ const RecyclingDashboard = () => {
     e.preventDefault();
     try {
       await axios.post(
-        'http://localhost:5000/api/household/recycling-log',
+        "https://smart-bin-backend-production.up.railway.app/api/household/recycling-log",
         {
           materialType,
           amount,
         },
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         }
       );
       // After adding the entry, fetch the updated log
       await fetchRecyclingLog();
       // Reset form fields
-      setMaterialType('');
-      setAmount('');
+      setMaterialType("");
+      setAmount("");
     } catch (error) {
-      console.error('Error adding recycling log entry:', error);
+      console.error("Error adding recycling log entry:", error);
     }
   };
 
@@ -58,7 +61,9 @@ const RecyclingDashboard = () => {
         <ul className="space-y-4">
           {recyclingLog.map((entry) => (
             <li key={entry._id} className="border border-gray-200 p-4 rounded">
-              <p className="font-semibold">Material Type: {entry.materialType}</p>
+              <p className="font-semibold">
+                Material Type: {entry.materialType}
+              </p>
               <p>Amount: {entry.amount}</p>
               <p>Date: {new Date(entry.date).toLocaleDateString()}</p>
             </li>

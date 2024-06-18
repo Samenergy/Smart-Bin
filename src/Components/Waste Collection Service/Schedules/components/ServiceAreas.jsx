@@ -14,11 +14,8 @@ const ServiceAreas = () => {
           throw new Error("User not authenticated");
         }
 
-        
-        
-
         const response = await axios.get(
-          `http://localhost:5000/api/service/areas`,
+          `https://smart-bin-backend-production.up.railway.app/api/service/areas`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -30,8 +27,8 @@ const ServiceAreas = () => {
         setLoading(false);
       } catch (error) {
         console.error("Error fetching user profile:", error);
-        setError("Error fetching user profile. Please try again later."); 
-        setLoading(false); 
+        setError("Error fetching user profile. Please try again later.");
+        setLoading(false);
       }
     };
 

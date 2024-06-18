@@ -1,54 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    street: '',
-    district: '',
-    phonenumber: '',
-    contactPerson: '', // Additional fields for service company
-    contactEmail: '', // Additional fields for service company
+    username: "",
+    email: "",
+    street: "",
+    district: "",
+    phonenumber: "",
+    contactPerson: "", // Additional fields for service company
+    contactEmail: "", // Additional fields for service company
     serviceArea: [], // Additional fields for service company
-    contactPhone: '', // Additional fields for service company
+    contactPhone: "", // Additional fields for service company
   });
 
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const token = localStorage.getItem('token');
-        const userType = localStorage.getItem('userType'); 
+        const token = localStorage.getItem("token");
+        const userType = localStorage.getItem("userType");
 
         if (!token || !userType) {
-          throw new Error('User not authenticated');
+          throw new Error("User not authenticated");
         }
 
-        const response = await axios.get(`http://localhost:5000/api/${userType}/profile`, {
-          headers: {
-            Authorization: `Bearer ${token}`
+        const response = await axios.get(
+          `https://smart-bin-backend-production.up.railway.app/api/${userType}/profile`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
           }
-        });
+        );
 
         setUser(response.data);
         // Set formData based on userType
-        if (userType === 'household') {
+        if (userType === "household") {
           setFormData({
             username: response.data.username,
             email: response.data.email,
             street: response.data.street,
             district: response.data.district,
             phonenumber: response.data.phonenumber,
-            contactPerson: '', // Reset additional fields for service company
-            contactEmail: '', // Reset additional fields for service company
+            contactPerson: "", // Reset additional fields for service company
+            contactEmail: "", // Reset additional fields for service company
             serviceArea: [], // Reset additional fields for service company
-            contactPhone: '', // Reset additional fields for service company
+            contactPhone: "", // Reset additional fields for service company
           });
-        } else if (userType === 'service') {
+        } else if (userType === "service") {
           setFormData({
             username: response.data.username,
             email: response.data.email,
@@ -62,11 +65,11 @@ const Profile = () => {
           });
         }
       } catch (error) {
-        console.error('Error fetching user profile:', error);
+        console.error("Error fetching user profile:", error);
         Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'Failed to fetch user profile. Please log in again.'
+          icon: "error",
+          title: "Error",
+          text: "Failed to fetch user profile. Please log in again.",
         });
       } finally {
         setLoading(false);
@@ -88,32 +91,36 @@ const Profile = () => {
     e.preventDefault();
 
     try {
-      const token = localStorage.getItem('token');
-      const userType = localStorage.getItem('userType'); 
-    
+      const token = localStorage.getItem("token");
+      const userType = localStorage.getItem("userType");
+
       if (!token || !userType) {
-        throw new Error('User not authenticated');
+        throw new Error("User not authenticated");
       }
 
-      const response = await axios.put(`http://localhost:5000/api/${userType}/profile`, formData, {
-        headers: {
-          Authorization: `Bearer ${token}`
+      const response = await axios.put(
+        `https://smart-bin-backend-production.up.railway.app/api/${userType}/profile`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
-      });
+      );
 
       setUser(response.data);
       setEditMode(false);
       Swal.fire({
-        icon: 'success',
-        title: 'Success',
-        text: 'Profile updated successfully'
+        icon: "success",
+        title: "Success",
+        text: "Profile updated successfully",
       });
     } catch (error) {
-      console.error('Error updating profile:', error);
+      console.error("Error updating profile:", error);
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Failed to update profile. Please try again.'
+        icon: "error",
+        title: "Error",
+        text: "Failed to update profile. Please try again.",
       });
     }
   };
@@ -132,20 +139,41 @@ const Profile = () => {
 
       {!editMode ? (
         <>
-          <p><strong>Username:</strong> {user.username}</p>
-          <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Street:</strong> {user.street}</p>
-          <p><strong>District:</strong> {user.district}</p>
-          <p><strong>Phone Number:</strong> {user.phonenumber}</p>
-          {user.userType === 'service' && (
+          <p>
+            <strong>Username:</strong> {user.username}
+          </p>
+          <p>
+            <strong>Email:</strong> {user.email}
+          </p>
+          <p>
+            <strong>Street:</strong> {user.street}
+          </p>
+          <p>
+            <strong>District:</strong> {user.district}
+          </p>
+          <p>
+            <strong>Phone Number:</strong> {user.phonenumber}
+          </p>
+          {user.userType === "service" && (
             <>
-              <p><strong>Contact Person:</strong> {user.contactPerson}</p>
-              <p><strong>Contact Email:</strong> {user.contactEmail}</p>
-              <p><strong>Service Area:</strong> {user.serviceArea.join(', ')}</p>
-              <p><strong>Contact Phone:</strong> {user.contactPhone}</p>
+              <p>
+                <strong>Contact Person:</strong> {user.contactPerson}
+              </p>
+              <p>
+                <strong>Contact Email:</strong> {user.contactEmail}
+              </p>
+              <p>
+                <strong>Service Area:</strong> {user.serviceArea.join(", ")}
+              </p>
+              <p>
+                <strong>Contact Phone:</strong> {user.contactPhone}
+              </p>
             </>
           )}
-          <button onClick={() => setEditMode(true)} className="bg-blue-500 text-white py-2 px-4 rounded mt-4">
+          <button
+            onClick={() => setEditMode(true)}
+            className="bg-blue-500 text-white py-2 px-4 rounded mt-4"
+          >
             Edit Profile
           </button>
         </>
@@ -211,7 +239,7 @@ const Profile = () => {
             />
           </label>
 
-          {user.userType === 'service' && (
+          {user.userType === "service" && (
             <>
               <label className="block mb-4">
                 <input
@@ -263,10 +291,16 @@ const Profile = () => {
             </>
           )}
 
-          <button type="submit" className="bg-green-500 text-white py-2 px-4 rounded mt-4">
+          <button
+            type="submit"
+            className="bg-green-500 text-white py-2 px-4 rounded mt-4"
+          >
             Save Changes
           </button>
-          <button onClick={() => setEditMode(false)} className="bg-red-500 text-white py-2 px-4 rounded mt-4 ml-2">
+          <button
+            onClick={() => setEditMode(false)}
+            className="bg-red-500 text-white py-2 px-4 rounded mt-4 ml-2"
+          >
             Cancel
           </button>
         </form>

@@ -21,7 +21,10 @@ const HouseholdUserSignup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/signup/household", formData);
+      await axios.post(
+        "https://smart-bin-backend-production.up.railway.app/api/signup/household",
+        formData
+      );
       alert("Account registered successfully!");
       setFormData({
         username: "",
@@ -44,7 +47,10 @@ const HouseholdUserSignup = () => {
       <form onSubmit={handleSubmit} className="w-full">
         <div className="flex flex-col lg:flex-row gap-5 mb-4">
           <div className="w-full">
-            <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="username"
+              className="block text-sm font-medium text-gray-700"
+            >
               Username
             </label>
             <input
@@ -58,7 +64,10 @@ const HouseholdUserSignup = () => {
             />
           </div>
           <div className="w-full">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
               Email
             </label>
             <input
@@ -74,7 +83,10 @@ const HouseholdUserSignup = () => {
         </div>
         <div className="flex flex-col lg:flex-row gap-5 mb-4">
           <div className="w-full">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700"
+            >
               Password
             </label>
             <input
@@ -88,7 +100,10 @@ const HouseholdUserSignup = () => {
             />
           </div>
           <div className="w-full">
-            <label htmlFor="street" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="street"
+              className="block text-sm font-medium text-gray-700"
+            >
               House number
             </label>
             <input
@@ -104,7 +119,10 @@ const HouseholdUserSignup = () => {
         </div>
         <div className="flex flex-col lg:flex-row gap-5 mb-4">
           <div className="w-full">
-            <label htmlFor="phonenumber" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="phonenumber"
+              className="block text-sm font-medium text-gray-700"
+            >
               Phone Number
             </label>
             <input
@@ -118,7 +136,10 @@ const HouseholdUserSignup = () => {
             />
           </div>
           <div className="w-full">
-            <label htmlFor="district" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="district"
+              className="block text-sm font-medium text-gray-700"
+            >
               District
             </label>
             <input

@@ -25,7 +25,7 @@ const CompanyProfile = () => {
         }
 
         const response = await axios.get(
-          "http://localhost:5000/api/service/profile",
+          "https://smart-bin-backend-production.up.railway.app/api/service/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -76,7 +76,7 @@ const CompanyProfile = () => {
       }
 
       const response = await axios.put(
-        "http://localhost:5000/api/service/profile",
+        "https://smart-bin-backend-production.up.railway.app/api/service/profile",
         {
           ...formData,
           serviceArea: formData.serviceArea

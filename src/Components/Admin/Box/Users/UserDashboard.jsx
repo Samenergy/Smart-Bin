@@ -22,7 +22,7 @@ const UserDashboard = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/admin/users",
+          "https://smart-bin-backend-production.up.railway.app/api/admin/users",
           {
             headers: {
               Authorization: `Bearer ${token}`,

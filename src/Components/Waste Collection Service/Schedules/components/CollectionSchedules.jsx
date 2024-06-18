@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function CollectionSchedules() {
   const [schedulesWithUsers, setSchedulesWithUsers] = useState([]);
@@ -10,16 +10,19 @@ function CollectionSchedules() {
     const fetchCollectionSchedules = async () => {
       try {
         // Replace baseURL with your backend server URL
-        const response = await axios.get('http://localhost:5000/api/service/schedules', {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}` // Assuming you store JWT token in localStorage
+        const response = await axios.get(
+          "https://smart-bin-backend-production.up.railway.app/api/service/schedules",
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`, // Assuming you store JWT token in localStorage
+            },
           }
-        });
+        );
         setSchedulesWithUsers(response.data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching data:', error);
-        setError('Error fetching data. Please try again later.');
+        console.error("Error fetching data:", error);
+        setError("Error fetching data. Please try again later.");
         setLoading(false);
       }
     };

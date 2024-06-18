@@ -15,10 +15,10 @@ const Dashboard = () => {
         }
 
         // Assuming 'usertype' is a variable holding the user's type (e.g., 'household', 'admin', etc.)
-        const usertype = 'household'; // Replace with your logic to get the user type
+        const usertype = "household"; // Replace with your logic to get the user type
 
         const response = await axios.get(
-          `http://localhost:5000/api/${usertype}/profile/`,
+          `https://smart-bin-backend-production.up.railway.app/api/${usertype}/profile/`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

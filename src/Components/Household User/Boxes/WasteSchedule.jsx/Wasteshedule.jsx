@@ -23,7 +23,7 @@ const WasteCollectionSchedule = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://localhost:5000/api/household/schedules",
+          "https://smart-bin-backend-production.up.railway.app/api/household/schedules",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -103,8 +103,8 @@ const WasteCollectionSchedule = () => {
     try {
       const token = localStorage.getItem("token");
       const url = editMode
-        ? `http://localhost:5000/api/household/schedules/${currentScheduleId}`
-        : "http://localhost:5000/api/household/schedules";
+        ? `https://smart-bin-backend-production.up.railway.app/api/household/schedules/${currentScheduleId}`
+        : "https://smart-bin-backend-production.up.railway.app/api/household/schedules";
       const method = editMode ? "put" : "post";
       const dataToSend = { ...formData };
       const response = await axios[method](url, dataToSend, {
@@ -163,7 +163,7 @@ const WasteCollectionSchedule = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.delete(
-        `http://localhost:5000/api/household/schedules/${scheduleId}`,
+        `https://smart-bin-backend-production.up.railway.app/api/household/schedules/${scheduleId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -207,7 +207,9 @@ const WasteCollectionSchedule = () => {
 
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg mt-4">
-      <h2 className="text-2xl font-semibold mb-4">Waste Collection Schedules</h2>
+      <h2 className="text-2xl font-semibold mb-4">
+        Waste Collection Schedules
+      </h2>
       <button
         onClick={openModal}
         className="bg-green-500 text-white py-2 px-4 rounded mb-4"
@@ -216,21 +218,21 @@ const WasteCollectionSchedule = () => {
       </button>
 
       <div>
-        
         <table className="min-w-full bg-white border border-gray-200">
           <thead>
             <tr>
               <th className="py-2 px-4 border-b">Waste Type</th>
               <th className="py-2 px-4 border-b">Schedule</th>
               <th className="py-2 px-4 border-b">Actions</th>
-              
             </tr>
           </thead>
           <tbody>
             {sortedSchedules.map((schedule, index) => (
               <tr
                 key={schedule._id}
-                className={`text-[11px] h-[34px] ${index % 2 === 0 ? "bg-[#d6f1e1]" : ""}`}
+                className={`text-[11px] h-[34px] ${
+                  index % 2 === 0 ? "bg-[#d6f1e1]" : ""
+                }`}
               >
                 <td className="py-2 px-4">
                   {Array.isArray(schedule.wasteType)
@@ -252,7 +254,6 @@ const WasteCollectionSchedule = () => {
                     <MdDelete />
                   </button>
                 </td>
-                
               </tr>
             ))}
           </tbody>

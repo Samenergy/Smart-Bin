@@ -22,7 +22,10 @@ const WasteCollectionServiceSignup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/signup/service", formData);
+      await axios.post(
+        "https://smart-bin-backend-production.up.railway.app/api/signup/service",
+        formData
+      );
       alert("Account registered successfully!");
       setFormData({
         serviceName: "",
@@ -34,7 +37,7 @@ const WasteCollectionServiceSignup = () => {
         serviceArea: "",
       });
 
-      navigate("/login"); 
+      navigate("/login");
     } catch (error) {
       console.error(error);
       alert("Failed to register waste collection service");
@@ -43,9 +46,7 @@ const WasteCollectionServiceSignup = () => {
 
   return (
     <div className="min-w-min w-1/2  bg-[#fff] p-8 rounded-r-3xl shadow-2xl">
-      <h2 className="text-5xl font-bold mb-6">
-        Create account
-      </h2>
+      <h2 className="text-5xl font-bold mb-6">Create account</h2>
       <form onSubmit={handleSubmit}>
         <div className="flex gap-5">
           <div className="mb-4">

@@ -31,7 +31,7 @@ function Users() {
       }
 
       const response = await axios.get(
-        "http://localhost:5000/api/admin/users",
+        "https://smart-bin-backend-production.up.railway.app/api/admin/users",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -73,7 +73,8 @@ function Users() {
       let data = {};
 
       if (userType === "household") {
-        url = "http://localhost:5000/api/signup/household";
+        url =
+          "https://smart-bin-backend-production.up.railway.app/api/signup/household";
         data = {
           username: newUser.username,
           email: newUser.email,
@@ -83,7 +84,8 @@ function Users() {
           phonenumber: newUser.phonenumber,
         };
       } else if (userType === "service") {
-        url = "http://localhost:5000/api/signup/service";
+        url =
+          "https://smart-bin-backend-production.up.railway.app/api/signup/service";
         data = {
           serviceName: newUser.username,
           contactPerson: newUser.contactPerson,
@@ -125,7 +127,7 @@ function Users() {
         throw new Error("Token not found");
       }
 
-      const url = `http://localhost:5000/api/admin/users/${userId}`;
+      const url = `https://smart-bin-backend-production.up.railway.app/api/admin/users/${userId}`;
 
       const response = await axios.delete(url, {
         headers: {
@@ -154,7 +156,7 @@ function Users() {
       }
 
       await axios.put(
-        `http://localhost:5000/api/admin/users/${userId}`,
+        `https://smart-bin-backend-production.up.railway.app/api/admin/users/${userId}`,
         newUser,
         {
           headers: {
@@ -402,4 +404,3 @@ function Users() {
 }
 
 export default Users;
-
