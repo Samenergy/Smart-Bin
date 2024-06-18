@@ -1,14 +1,13 @@
-import React from 'react';
-import LoginForm from './Login';
-import Sidelogin from './sidelogin';
+import React from 'react'
+import projectImage from "../../../assets/YKSR9RK.jpg";
 
-const Signin = () => {
+
+const Sidelogin = () => {
   return (
-    <div className='flex flex-col lg:flex-row p-6 lg:p-20 bg-[#37af65] min-h-screen'>
-      <LoginForm />
-      <Sidelogin />
+    <div className=' ' >
+        <img className='rounded-r-3xl shadow-lg' src={projectImage} alt="" />
     </div>
-  );
-};
+  )
+}
 
-export default Signin;
+export default Sidelogin

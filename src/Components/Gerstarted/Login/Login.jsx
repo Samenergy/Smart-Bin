@@ -52,7 +52,7 @@ const LoginForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full lg:w-1/2 bg-gray-50 p-6 lg:p-8 rounded-r-3xl lg:rounded-l-3xl shadow-lg"
+      className="w-1/2 bg-gray-50 p-8 rounded-l-3xl shadow-lg"
     >
       <a href="/">
         <p className="text-3xl text-center font-bold">
@@ -60,8 +60,8 @@ const LoginForm = () => {
           <span className="text-[#37af65] text-7xl -ml-1">.</span>{" "}
         </p>
       </a>
-      <h1 className="text-3xl my-6 text-center lg:text-left">Welcome Back</h1>
-      <h2 className="text-xl font-light my-6 text-center lg:text-left">Login with email</h2>
+      <h1 className="text-3xl my-6 text-center">Welcome Back</h1>
+      <h2 className="text-xl font-light my-6 text-center">Login with email</h2>
 
       <label className="block mb-4">
         <input
@@ -69,7 +69,7 @@ const LoginForm = () => {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="mt-1 block w-full lg:w-3/4 rounded-md border-gray-300 shadow-sm py-2 px-2 my-6"
+          className="mt-1 block w-3/4 rounded-md border-gray-300 shadow-sm py-2 px-2 my-6"
           placeholder="Email"
           required
         />
@@ -81,24 +81,24 @@ const LoginForm = () => {
           name="password"
           value={formData.password}
           onChange={handleChange}
-          className="mt-1 block w-full lg:w-3/4 rounded-md my-6 border-gray-300 shadow-sm py-2 px-2"
+          className="mt-1 block w-3/4 rounded-md my-6 border-gray-300 shadow-sm py-2 px-2"
           placeholder="Password"
           required
         />
       </label>
-      <a href="/" className="underline block mb-4 text-center lg:text-left hover:text-[#37af65]">
+      <a href="/" className="underline block mb-4 hover:text-[#37af65]">
         Forgot Password
       </a>
 
       <button
         type="submit"
-        className="w-full lg:w-3/4 bg-[#37af65] text-white py-2 rounded-lg hover:bg-[#59a173]"
+        className="w-3/4 bg-[#37af65] text-white py-2 rounded-lg hover:bg-[#59a173]"
       >
         Login
       </button>
-      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start mt-5">
-        <p className="mb-4 lg:mb-0">Don't have an account yet?</p>
-        <a href="/signup" className="underline block ml-0 lg:ml-2 hover:text-[#37af65]">
+      <div className="flex gap-2 mt-5 ml-16">
+        <p>Don't have an account yet?</p>
+        <a href="/signup" className="underline block mb-4 hover:text-[#37af65]">
           Signup
         </a>
       </div>
