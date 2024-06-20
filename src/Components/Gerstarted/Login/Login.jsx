@@ -94,8 +94,8 @@ const LoginForm = () => {
         />
       </label>
       <a
-        href="/"
-        className="underline block mb-4 text-center hover:text-[#37af65]"
+        href=""
+        className="underline block ml-28 mb-4 text-center hover:text-[#37af65]"
       >
         Forgot Password
       </a>
