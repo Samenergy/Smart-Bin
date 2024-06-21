@@ -35,7 +35,7 @@ const App = () => {
         <Route path="/dashboard" element={<WasteServiceMerge />} />
         <Route path="/RouteManagement" element={<RouteManagementmerge />} />
         <Route path="/schedules" element={<Schedulesmerge />} />
-        <Route path="/perfomance" element={<Performance />} />
+        <Route path="/perfomancelog" element={<Performance />} />
         <Route path="/companyprofile" element={<ProfileCompany />} />
         <Route path="/admin" element={<AdminMerge />} />
         <Route path="/users" element={<UsersMerge />} />
